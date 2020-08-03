@@ -359,7 +359,7 @@ class EyeTracker:
 		"""
 		
 		# Make sure that the message is in a unicode format.
-		msg = msg.decode(u'utf-8')
+		#msg = msg.decode(u'utf-8')
 		
 		# A message is a time-stamped sample, with a slightly different
 		# content than normal samples. In essence, the log message sample
@@ -755,7 +755,7 @@ def _crop_face(frame, face_cascade, minsize=(30, 30)):
 		scaleFactor=1.1,
 		minNeighbors=5,
 		minSize=minsize,
-		flags = cv2.cv.CV_HAAR_SCALE_IMAGE
+		flags = cv2.CASCADE_SCALE_IMAGE
 		)
 	
 	# Find out what the largest face is (this is assumed to be the

@@ -16,14 +16,14 @@ BUFFSEP = 'edwinisdebeste'
 
 import os.path
 
-# Try to import VideoCapture Library
+# Try to import Library
 # Requires VideoCapture & PIL libraries
 vcAvailable = False
 import imp
 try:
-  imp.find_module('VideoCapture')
+  imp.find_module('cv2')
   vcAvailable = True
-  import VideoCapture
+  import cv2
 except ImportError:
   print("VideoCapture module not available")
 
@@ -31,7 +31,7 @@ try:
 	import pygame
 	import pygame.camera
 	pygame.init()
-	pygame.camera.init()
+	#pygame.camera.init()
 except:
 	raise Exception("Error in camtracker: PyGame could not be imported and initialized! :(")
 
@@ -804,7 +804,7 @@ class CamEyeTracker:
 			self.cam = pygame.camera.Camera(device, camres, 'RGB')
 			self.cam.start()
 		else:
-			self.cam = VideoCapture.Device()
+			self.cam = cv2.VideoCapture.Device()
 			
 		# get the webcam resolution (get_size not available on all systems)
 		try:

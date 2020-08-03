@@ -63,7 +63,7 @@ def setup(imgdir=None, mode=u'RGB', **kwargs):
 			# Briefly wait for a key press
 			keycode = cv2.waitKey(10)
 			if keycode != -1:
-				print keycode
+				print(keycode)
 			if keycode == up:
 				tracker._pupt += 1
 			elif keycode == down:
